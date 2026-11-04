@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="600" viewBox="0 0 1280 600">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#4b5563"/>
+    </marker>
+    <style>
+      text { font-family: "Microsoft YaHei", "Noto Sans SC", "PingFang SC", sans-serif; }
+      .title { font-size: 24px; font-weight: 700; fill: #111827; }
+      .sub { font-size: 14px; fill: #4b5563; }
+      .box { fill: #f3f4f6; stroke: #6b7280; stroke-width: 1.4; rx: 8; }
+      .dsp { fill: #eef2ff; stroke: #4f46e5; stroke-width: 1.6; rx: 8; }
+      .mem { fill: #fff7ed; stroke: #ea580c; stroke-width: 1.6; rx: 8; }
+      .io { fill: #ecfdf5; stroke: #059669; stroke-width: 1.6; rx: 8; }
+      .lbl { font-size: 15px; font-weight: 600; fill: #111827; }
+      .small { font-size: 12px; fill: #374151; }
+      .line { stroke: #4b5563; stroke-width: 1.6; fill: none; marker-end: url(#arrow); }
+      .dash { stroke: #6b7280; stroke-width: 1.4; stroke-dasharray: 6 5; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <text class="title" x="40" y="42">低延时实时视觉处理系统 · HX1P35A + SC500CS + 11.6 寸 HDMI</text>
+  <text class="sub" x="40" y="66">1280×720@30 采集 · 4 页 DDR 帧缓存 · 1280×720@60 显示 · 算法全行级流水</text>
+
+  <!-- row 1: capture + ISP -->
+  <rect class="io" x="40" y="110" width="150" height="72"/>
+  <text class="lbl" x="58" y="138">SC500CS</text>
+  <text class="small" x="58" y="158">1280×720@30</text>
+  <text class="small" x="58" y="174">RAW10 / 2-lane</text>
+
+  <rect class="box" x="230" y="110" width="150" height="72"/>
+  <text class="lbl" x="252" y="138">MIPI D-PHY</text>
+  <text class="small" x="252" y="158">HS 接收</text>
+  <text class="small" x="252" y="174">字节/通道对齐</text>
+
+  <rect class="box" x="420" y="110" width="150" height="72"/>
+  <text class="lbl" x="442" y="138">CSI-2 / RAW10</text>
+  <text class="small" x="442" y="158">长短包解析</text>
+  <text class="small" x="442" y="174">40 bit → 4×10 bit</text>
+
+  <rect class="box" x="610" y="110" width="150" height="72"/>
+  <text class="lbl" x="632" y="138">RAW 预处理</text>
+  <text class="small" x="632" y="158">[1,2,1]/4 同色平滑</text>
+  <text class="small" x="632" y="174">±8 限幅 · 扣黑 64</text>
+
+  <rect class="box" x="800" y="110" width="150" height="72"/>
+  <text class="lbl" x="822" y="138">去马赛克</text>
+  <text class="small" x="822" y="158">BGGR 3×3</text>
+  <text class="small" x="822" y="174">4 像素并行</text>
+
+  <rect class="box" x="990" y="110" width="170" height="72"/>
+  <text class="lbl" x="1012" y="138">彩色 ISP</text>
+  <text class="small" x="1012" y="158">AWB · 饱和度</text>
+  <text class="small" x="1012" y="174">96/128 bit 打包</text>
+
+  <!-- row 2: DDR + display path -->
+  <rect class="mem" x="990" y="250" width="170" height="72"/>
+  <text class="lbl" x="1012" y="278">DDR2 帧缓存</text>
+  <text class="small" x="1012" y="298">4 页乒乓</text>
+  <text class="small" x="1012" y="314">整帧发布 / 坏帧回退</text>
+
+  <rect class="dsp" x="770" y="250" width="170" height="72"/>
+  <text class="lbl" x="792" y="278">TNR / 帧差</text>
+  <text class="small" x="792" y="298">当前页 + 参考页</text>
+  <text class="small" x="792" y="314">融合 · 字级差分</text>
+
+  <rect class="box" x="550" y="250" width="170" height="72"/>
+  <text class="lbl" x="572" y="278">HDMI 720p60</text>
+  <text class="small" x="572" y="298">时序 · TMDS</text>
+  <text class="small" x="572" y="314">75 MHz / 375 MHz</text>
+
+  <rect class="dsp" x="330" y="250" width="170" height="72"/>
+  <text class="lbl" x="352" y="278">视觉处理</text>
+  <text class="small" x="352" y="298">边缘 · 二值化</text>
+  <text class="small" x="352" y="314">颜色分块 · 油画 · 运动</text>
+
+  <rect class="box" x="110" y="250" width="170" height="72"/>
+  <text class="lbl" x="132" y="278">OSD + LED</text>
+  <text class="small" x="132" y="298">Logo · 模式名 · 计数</text>
+  <text class="small" x="132" y="314">RGB LED 指示</text>
+
+  <!-- row 3: control -->
+  <rect class="box" x="330" y="410" width="170" height="64"/>
+  <text class="lbl" x="352" y="436">AE / AGC</text>
+  <text class="small" x="352" y="456">中心加权 · I2C 回摄像头</text>
+
+  <rect class="box" x="550" y="410" width="170" height="64"/>
+  <text class="lbl" x="572" y="436">KEY0 / KEY1</text>
+  <text class="small" x="572" y="456">消抖 · vsync 边界提交</text>
+
+  <rect class="box" x="770" y="410" width="170" height="64"/>
+  <text class="lbl" x="792" y="436">模式 / 阈值</text>
+  <text class="small" x="792" y="456">正常/边缘/二值化/识别</text>
+
+  <!-- arrows row 1 -->
+  <path class="line" d="M190,146 L226,146"/>
+  <path class="line" d="M380,146 L416,146"/>
+  <path class="line" d="M570,146 L606,146"/>
+  <path class="line" d="M760,146 L796,146"/>
+  <path class="line" d="M950,146 L986,146"/>
+
+  <!-- ISP to DDR -->
+  <path class="line" d="M1075,182 L1075,246"/>
+
+  <!-- DDR -> TNR -> HDMI -> vision -> OSD -->
+  <path class="line" d="M990,286 L944,286"/>
+  <path class="line" d="M770,286 L724,286"/>
+  <path class="line" d="M550,286 L504,286"/>
+  <path class="line" d="M330,286 L284,286"/>
+
+  <!-- control links -->
+  <path class="dash" d="M415,410 L415,326"/>
+  <path class="dash" d="M724,455 L766,455"/>
+  <path class="dash" d="M855,410 L855,380 L504,326"/>
+  <path class="dash" d="M855,410 C760,390 330,360 200,326"/>
+
+  <!-- labels -->
+  <text class="small" x="1000" y="354">写：约 82.9 MB/s</text>
+  <text class="small" x="520" y="354">读：当前页 + 参考页（每显示帧两次突发）</text>
+
+  <text class="small" x="40" y="530">说明：视觉处理位于 HDMI 像素域（Gamma 之后），与直通共用同一套时序；</text>
+  <text class="small" x="40" y="550">TNR 与帧差在 DDR 读页侧完成，不额外占片内整帧缓存。虚线为控制/配置通路。</text>
+  <text class="small" x="40" y="578">仓库：low-latency-vision-fpga-v2 · MIT License · 加密 IP 与比特流不随仓库分发</text>
+</svg>
+

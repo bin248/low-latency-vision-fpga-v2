@@ -1,0 +1,33 @@
+# Anlogic Tang Dynasty build products
+td_project/
+vendor_ip/
+**/camera_to_dsi_display_Runs/
+**/*.bit
+**/*.bid
+**/*.db
+**/*.qor
+**/*.area
+**/*.timing
+**/*.ts
+**/*.log
+**/*.logw
+**/*.prj
+**/*.status
+**/*.temp.f
+**/.*.f
+
+# Python
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Editors / OS
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+
+# Packaging / local captures
+*.zip
+captures/
+*.png.tmp
