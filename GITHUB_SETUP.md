@@ -17,7 +17,7 @@
 6. 把 `low-latency-vision-fpga-v2.zip` 解压到一个空目录，选中解压后的**内容**（不是外层文件夹）拖进上传区；
 7. 提交信息填 `init: low-latency vision v2 on Anlogic PH1P35`，点 **Commit changes**。
 
-> GitHub 网页一次最多上传 100 个文件；本仓库约 75 个文件，可以一次完成。
+> GitHub 网页一次最多上传 100 个文件；本仓库约 76 个文件，可以一次完成。
 > 如果浏览器把 `rtl/`、`docs/` 等目录拆开，先上传根目录文件，再按目录分批上传。
 
 ---
@@ -98,7 +98,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\push_to_github.ps1 -Token "gi
 1. 仓库首页 README 正常渲染，`docs/images/system_arch.svg` 能显示；
 2. `docs/`、`rtl/`、`tests/` 的中文文件名显示正常；
 3. `LICENSE` 被识别为 **MIT**；
-4. 文件树与本地一致（约 75 个文件，不含加密 IP 与比特流）；
+4. 文件树与本地一致（约 76 个文件，不含加密 IP 与比特流）；
 5. 默认分支是 `main`；
 6. 在 **About** 里补一句简介，建议加 topics：
    `fpga`、`anlogic`、`ph1p35`、`mipi`、`image-processing`、`computer-vision`、`verilog`。
@@ -125,4 +125,5 @@ fine-grained token 缺 `Contents: Read and write` 或 `Administration: Read and 
 **Q：Gitee 旧仓库怎么办？**
 本仓库是 v2（improve8），与 Gitee 上的 v1 并存。可以在 Gitee 仓库 README 里加一行指向 GitHub v2，
 或在 Gitee 设置里绑定 GitHub 镜像。
+
 

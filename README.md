@@ -1,5 +1,7 @@
 # 低延时实时视觉处理系统 v2 · Low-Latency Real-Time Vision on Anlogic PH1P35
 
+[English](README.en.md) | 简体中文
+
 > 2026 年全国大学生嵌入式芯片与系统设计竞赛 · FPGA 创新设计赛道 · 选题二
 > “基于安路 FPGA 的实时数字图像处理系统”的开源实现
 
@@ -182,6 +184,8 @@ python -m unittest discover -s tests -v
 | 时域降噪 | 旁路 | ✅ 当前页/参考页融合 |
 | RGB LED 指示 | ❌ | ✅ 识别颜色点亮 |
 | 按键平滑切换 | 帧边界 | ✅ 消抖 + vsync 提交 |
+
+v1（Gitee）：<https://gitee.com/tin-mng-chn-bng/low-latency-vision-fpga>
 
 ---
 
